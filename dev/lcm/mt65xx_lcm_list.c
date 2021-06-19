@@ -43,6 +43,7 @@
 #if defined(MTK_LCM_DEVICE_TREE_SUPPORT)
 extern LCM_DRIVER lcm_common_drv;
 #else
+extern LCM_DRIVER jd9365_dsi_vdo_holitech_hd720_lcm_drv;
 extern LCM_DRIVER otm1282a_hd720_dsi_vdo_60hz_lcm_drv;
 extern LCM_DRIVER otm1282a_hd720_dsi_vdo_lcm_drv;
 extern LCM_DRIVER vvx10f008b00_wuxga_dsi_vdo_lcm_drv;
@@ -284,6 +285,9 @@ LCM_DRIVER *lcm_driver_list[] = {
 #if defined(MTK_LCM_DEVICE_TREE_SUPPORT)
 	&lcm_common_drv,
 #else
+#if defined(JD9365_DSI_VDO_HOLITECH_HD720)
+	&jd9365_dsi_vdo_holitech_hd720_lcm_drv,
+#endif
 #if defined(OTM1902A_FHD_DSI_CMD_TIANMA)
 	&otm1902a_fhd_dsi_cmd_tianma_lcm_drv,
 #endif
