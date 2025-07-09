@@ -39,8 +39,8 @@ Partialy reversed by zoggn@HakonTI 2021
 //#define LCM_ID (0x98)
 
 #ifdef BUILD_LK
-#define GPIO_TPS65132_ENN   GPIO_LCD_BIAS_ENN_PIN
-#define GPIO_TPS65132_ENP   GPIO_LCD_BIAS_ENP_PIN
+#define GPIO_TPS65132_ENN   63
+#define GPIO_TPS65132_ENP   64
 #endif
 
 #define  LCM_DSI_CMD_MODE	0
@@ -499,6 +499,8 @@ static void lcm_resume_power(void)
 
 static void lcm_init(void)
 {
+    	lcm_init_power();
+    	MDELAY(10);
 	SET_RESET_PIN(1);
 	MDELAY(2);
 	SET_RESET_PIN(0);
